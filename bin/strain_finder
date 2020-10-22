@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require './lib/strain_finder'
+
+StrainFinder::CLI.new.call
