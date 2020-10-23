@@ -2,4 +2,4 @@
 require './lib/environment'
 
 StrainFinder::CLI.new.call
-StrainFinder::Scraper.fetch_data
+StrainFinder::Scraper.fetch_strains
