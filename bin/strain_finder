@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
-require './lib/strain_finder'
+require './lib/environment'
 
 StrainFinder::CLI.new.call
+StrainFinder::Scraper.fetch_data
