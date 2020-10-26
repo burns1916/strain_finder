@@ -33,6 +33,4 @@ class StrainFinder::Strains
     strains.each {|attributes| self.new(attributes)}
   end
 
-
-
 end
