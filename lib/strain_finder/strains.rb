@@ -1,13 +1,13 @@
 class StrainFinder::Strains
 
-  attr_accessor :id, :name, :race, :flavor, :effect
+  attr_accessor :id, :name, :race, :flavors, :effects
 
   @@all = []
 
   def initialize(attributes)
-    attributes.each {|k, v| self.send("#{k}=", v)}
+    @name = attributes[0]
+    attributes[1].each {|k, v| self.send("#{k}=", v)}
     save
-    binding.pry
   end
 
   def self.all
@@ -18,16 +18,28 @@ class StrainFinder::Strains
     @@all << self
   end
 
-  def find_by_race(race)
-    all.find{|s| s.race == race}
+  def self.find_by_name(name)
+    all.find do |s| s.name == name
+      puts s.name
+    end
   end
 
-  def find_by_flavor(flavor)
-    all.find{|s| s.flavor == flavor}
+  def self.find_by_race(race)
+    all.find do |s| s.race == race
+      puts s.name
+    end
   end
 
-  def find_by_effect(effect)
-    all.find{|s| s.effect == effect}
+  def self.find_by_flavor(flavor)
+    all.find do |s| s.flavor == flavor
+      puts s.name
+    end
+  end
+
+  def self.find_by_effect(effect)
+    all.find do |s| s.effects == effect
+    puts s.name
+    end
   end
 
   def self.new_from_collection(strains)

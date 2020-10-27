@@ -3,5 +3,7 @@ require 'bundler/setup'
 require './lib/environment'
 
 
-#StrainFinder::CLI.new.call
+
 StrainFinder::Scraper.fetch_all_strains
+StrainFinder::CLI.new.call
+#StrainFinder::Strains.find_by_effect("sleepy")

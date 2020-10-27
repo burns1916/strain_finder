@@ -42,9 +42,15 @@ class StrainFinder::CLI
     input = nil
       puts "Please enter the name of the strain you are searching for:"
       puts "To restart search type exit."
-    while input != "exit"
-
-    end
+      input = gets.strip.downcase.to_s
+        if
+          StrainFinder::Strains.find_by_name(input) == true
+        elsif input == exit.to_s
+          call
+        else
+          puts "Please Try Valid Strain Name"
+          name_search
+        end
   end
 
   def race_search
