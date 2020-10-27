@@ -8,36 +8,35 @@ class StrainFinder::Scraper
     url = "http://strainapi.evanbusse.com/y4hQMu2/strains/search/all"
     resources = HTTParty.get(url)
     binding.pry
-    StrainFinder::Strains.new_from_collection(resources)
-
+    resources.each {StrainFinder::Strains.new_from_collection(resources)}
   end
 
   def self.fetch_strains_by_name(name)
     @name = name
     url = "http://strainapi.evanbusse.com/y4hQMu2/strains/search/name/#{@name}"
     resources = HTTParty.get(url)
-    StrainFinder::Strains.new_from_collection(resources)
+    #StrainFinder::Strains.new_from_collection(resources)
   end
 
   def self.fetch_strains_by_race(race)
     @race = race
     url = "http://strainapi.evanbusse.com/y4hQMu2/strains/search/race/#{@race}"
     resources = HTTParty.get(url)
-    StrainFinder::Strains.new_from_collection(resources)
+    #StrainFinder::Strains.new_from_collection(resources)
   end
 
-  def fetch_strains_by_effect(effect)
+  def self.fetch_strains_by_effect(effect)
     @effect = effect
     url = "http://strainapi.evanbusse.com/y4hQMu2/strains/search/effect/#{@effect}"
     resources = HTTParty.get(url)
-    StrainFinder::Strains.new_from_collection(resources)
+    #resources.each {StrainFinder::Strains.new_from_collection(resources)}
   end
 
   def self.fetch_strains_by_flavor(flavor)
     @flavor = flavor
     url = "http://strainapi.evanbusse.com/y4hQMu2/strains/search/flavor/#{@flavor}"
     resources = HTTParty.get(url)
-    StrainFinder::Strains.new_from_collection(resources)
+    #StrainFinder::Strains.new_from_collection(resources)
   end
 
 end
