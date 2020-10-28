@@ -1,4 +1,3 @@
-require 'nokogiri'
 require 'pry'
 require 'httparty'
 

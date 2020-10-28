@@ -19,31 +19,23 @@ class StrainFinder::Strains
   end
 
   def self.find_by_name(name)
-    all.find do |s| s.name == name
-      puts s.name
-    end
+    all.find {|s| s.name == name}
   end
 
-  def self.find_by_race(race)
-    all.find do |s| s.race == race
-      puts s.name
-    end
+  def self.select_by_race(race)
+    race_array = all.select {|s| s.race == race}
+    race_array.each {|strain| puts strain.name}
   end
 
   def self.find_by_flavor(flavor)
-    all.find do |s| s.flavor == flavor
-      puts s.name
-    end
+    all.find {|s| s.flavor == flavor}
   end
 
   def self.find_by_effect(effect)
-    all.find do |s| s.effects == effect
-    puts s.name
-    end
+    all.find {|s| s.effects == effect}
   end
 
   def self.new_from_collection(strains)
     strains.each {|attributes| self.new(attributes)}
   end
-
 end

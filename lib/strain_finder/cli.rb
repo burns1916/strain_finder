@@ -2,9 +2,8 @@ class StrainFinder::CLI
 
   def call
     puts "Hello, welcome to the Cannabis Strain Finder."
-    search_by
-    search_input
-    goodbye
+      search_by
+      search_input
   end
 
   def search_by
@@ -18,7 +17,6 @@ class StrainFinder::CLI
   def search_input
     input = nil
       puts "Enter the number you would like to search by, type list to see your options again, type exit to leave the program."
-    while input != "exit"
       input = gets.strip.downcase
       case input
       when "1"
@@ -31,22 +29,26 @@ class StrainFinder::CLI
         effect_search
       when "list"
         search_by
+        search_input
+      when "exit"
+        goodbye
       else
         puts "Please input valid option"
         search_by
+        search_input
       end
-    end
   end
 
   def name_search
     input = nil
       puts "Please enter the name of the strain you are searching for:"
-      puts "To restart search type exit."
-      input = gets.strip.downcase.to_s
-        if
-          StrainFinder::Strains.find_by_name(input) == true
-        elsif input == exit.to_s
+      puts "To restart search type restart. Or to exit type exit."
+      input = gets.strip.downcase
+        case input
+        when "restart"
           call
+        when "exit"
+          goodbye
         else
           puts "Please Try Valid Strain Name"
           name_search
@@ -56,21 +58,23 @@ class StrainFinder::CLI
   def race_search
     input = nil
       puts "Please enter Indica, Sativa, or Hybrid."
-      puts "To restart search type exit."
-    while input != "exit"
-      input = gets.strip.downcase
+      puts "To restart search type restart. Or to exit type exit."
+      input = gets.strip.downcase.to_s
       case input
       when "indica"
-
+        StrainFinder::Strains.select_by_race("indica")
       when "sativa"
-
+        StrainFinder::Strains.select_by_race("sativa")
       when "hybrid"
-
+        StrainFinder::Strains.select_by_race("hybrid")
+      when "restart"
+        call
+      when "exit"
+        goodbye
       else
         puts "Please input valid selection"
         race_search
       end
-    end
   end
 
   def flavor_search
