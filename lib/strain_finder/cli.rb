@@ -57,9 +57,9 @@ class StrainFinder::CLI
   def race_search
     input = nil
       puts "Would you like to search by:"
-      puts "1. Indica - "
-      puts "2. Sativa - "
-      puts "3. Hybrid - "
+      puts "1. Indica - Relaxing effects, Shorter stature, Broader leaves, Shorter growing cycle."
+      puts "2. Sativa - Energizing effects, Taller stature, Thinner leaves, Longer growing cycle."
+      puts "3. Hybrid - A cross of Indica and Sativa."
       puts "To exit type exit."
       input = gets.strip.downcase.to_s
       case input
