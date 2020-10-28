@@ -9,6 +9,12 @@ class StrainFinder::Scraper
     StrainFinder::Strains.new_from_collection(resources)
   end
 
+  def self.fetch_description(id)
+    url = "http://strainapi.evanbusse.com/y4hQMu2/strains/data/desc/#{id}"
+    description = HTTParty.get(url)
+    puts description
+    end
+
   #def self.fetch_strains_by_name(name)
     #@name = name
     #url = "http://strainapi.evanbusse.com/y4hQMu2/strains/search/name/#{@name}"
