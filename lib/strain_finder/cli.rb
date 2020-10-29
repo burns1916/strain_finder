@@ -5,54 +5,6 @@ class StrainFinder::CLI
     race_search
   end
 
-  #def search_by
-  #  puts "Would you like to search by:"
-  #  puts "1. Name"
-  #  puts "2. Race"
-  #  puts "3. Flavor"
-  #  puts "4. Effects"
-  #end
-
-  #def search_input
-  #  input = nil
-  #    puts "Enter the number you would like to search by, type list to see your options again, type exit to leave the program."
-  #    input = gets.strip.downcase
-  #    case input
-  #    when "1"
-  #      name_search
-  #    when "2"
-  #      race_search
-  #    when "3"
-  #      flavor_search
-  #    when "4"
-  #      effect_search
-  #    when "list"
-  #      search_by
-  #      search_input
-  #    when "exit"
-  #      goodbye
-  #    else
-  #      puts "Please input valid option"
-  #      search_by
-  #      search_input
-  #    end
-  #end
-
-#  def name_search
-#    input = nil
-#      puts "Please enter the name of the strain you are searching for:"
-#      puts "To restart search type restart. Or to exit type exit."
-#      input = gets.strip.downcase
-#        case input
-#        when "restart"
-#          call
-#        when "exit"
-#          goodbye
-#        else
-#          puts "Please Try Valid Strain Name"
-#          name_search
-#        end
-#  end
 
   def race_search
     input = nil
@@ -100,6 +52,59 @@ class StrainFinder::CLI
       end
     end
 
+    def goodbye
+      puts "Goodbye! Thank You for exploring!!"
+    end
+  end
+
+    #def search_by
+    #  puts "Would you like to search by:"
+    #  puts "1. Name"
+    #  puts "2. Race"
+    #  puts "3. Flavor"
+    #  puts "4. Effects"
+    #end
+
+    #def search_input
+    #  input = nil
+    #    puts "Enter the number you would like to search by, type list to see your options again, type exit to leave the program."
+    #    input = gets.strip.downcase
+    #    case input
+    #    when "1"
+    #      name_search
+    #    when "2"
+    #      race_search
+    #    when "3"
+    #      flavor_search
+    #    when "4"
+    #      effect_search
+    #    when "list"
+    #      search_by
+    #      search_input
+    #    when "exit"
+    #      goodbye
+    #    else
+    #      puts "Please input valid option"
+    #      search_by
+    #      search_input
+    #    end
+    #end
+
+  #  def name_search
+  #    input = nil
+  #      puts "Please enter the name of the strain you are searching for:"
+  #      puts "To restart search type restart. Or to exit type exit."
+  #      input = gets.strip.downcase
+  #        case input
+  #        when "restart"
+  #          call
+  #        when "exit"
+  #          goodbye
+  #        else
+  #          puts "Please Try Valid Strain Name"
+  #          name_search
+  #        end
+  #  end
 
 
 
@@ -133,8 +138,3 @@ class StrainFinder::CLI
   #    end
   #  end
   #end
-
-  def goodbye
-    puts "Goodbye! Thank You for exploring!!"
-  end
-end

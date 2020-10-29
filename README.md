@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To future coders:
+
+i would like to finish the commented out methods to expand the search criteria by allowing the user to search by name race effect or flavor.. Lets find the best way to implement that!!
 
 ## Development
 
